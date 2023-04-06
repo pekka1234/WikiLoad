@@ -5,7 +5,7 @@ Download wikipedia articles from the terminal fastly
 
 Example:
 
-![Screenshot from 2023-04-06 16-40-18](https://user-images.githubusercontent.com/62663286/230395662-f52b1866-9042-4106-978f-2319db37e90e.png)
+![Screenshot from 2023-04-06 16-41-40](https://user-images.githubusercontent.com/62663286/230396001-06802efa-36f8-437b-b422-542b0f7516e8.png)
 
 First enter the languege for the Wikipedia you want to use with the two letter abbreviation
 
