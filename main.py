@@ -1,18 +1,26 @@
 import urllib.request
+import urllib.parse
 
-# Language and article
-wlan = input("Wikipedia language: ")
-wiki = input("Article: ")
+while True:
+    # Language and article
+    wlan = input("Wikipedia language: ")
+    unparsedwiki = input("Article: ")
 
-try:
-    # Fetching content
-    page = urllib.request.urlopen("https://" + wlan + ".wikipedia.org/api/rest_v1/page/pdf/" + wiki)
-    file = page.read()
+    # Parsing for ä, ö and other letters
+    wiki = urllib.parse.quote_plus(unparsedwiki)
 
-    # Saving the result
-    f = open(wiki + ".pdf", "wb")
-    f.write(file)
-    f.close()
-except:
-    # If page not found
-    print("Page not found, see readme for instructions")    
+    try:
+        # Fetching content
+        page = urllib.request.urlopen("https://" + wlan + ".wikipedia.org/api/rest_v1/page/pdf/" + wiki)
+        file = page.read()
+
+        # Saving the result
+        f = open(unparsedwiki + ".pdf", "wb")
+        f.write(file)
+        f.close()
+
+        # Informing
+        print("Downloaded succesfully\n")
+    except:
+        # If page not found
+        print("Page not found, see readme for instructions\n")    
