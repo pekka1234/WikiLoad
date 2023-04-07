@@ -21,9 +21,9 @@ Then enter article or articles names the same it is in the actual link:
 
 If you want multiple articles at once:
 
-1. add ! to the beginning
+1. Add ! to the beginning
 
-2. seperate articles with commas
+2. Seperate articles with commas
 
-3. no spaces betwenn commas
+3. No spaces betwenn commas
 
