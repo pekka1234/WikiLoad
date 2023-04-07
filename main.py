@@ -4,23 +4,33 @@ import urllib.parse
 while True:
     # Language and article
     wlan = input("Wikipedia language: ")
-    unparsedwiki = input("Article: ")
+    wiki = input("Article: ")
 
-    # Parsing for ä, ö and other letters
-    wiki = urllib.parse.quote_plus(unparsedwiki)
+    # For multiple articles
+    if wiki[0] == "!":
+        wiki = wiki[1:]
+        wiki = wiki.split(",")
+    else:
+        wiki = [wiki]      
 
-    try:
-        # Fetching content
-        page = urllib.request.urlopen("https://" + wlan + ".wikipedia.org/api/rest_v1/page/pdf/" + wiki)
-        file = page.read()
+    for x in range(len(wiki)):
+        wiki[x] = urllib.parse.quote_plus(wiki[x])
 
-        # Saving the result
-        f = open(unparsedwiki + ".pdf", "wb")
-        f.write(file)
-        f.close()
+    
+    for x in wiki:
+        try:
+            # Fetching content
+            page = urllib.request.urlopen("https://" + wlan + ".wikipedia.org/api/rest_v1/page/pdf/" + x)
+            file = page.read()
 
-        # Informing
-        print("Downloaded succesfully\n")
-    except:
-        # If page not found
-        print("Page not found, see readme for instructions\n")    
+            # Saving the result
+            f = open(x + ".pdf", "wb")
+            f.write(file)
+            f.close()
+
+            # Informing
+            v = (wiki.index(x) + 1) / len(wiki) * 100
+            print("Downloaded succesfully ", str(v), "%", "\n")
+        except:
+            print("Page not found, see readme for instructions\n")    
+
