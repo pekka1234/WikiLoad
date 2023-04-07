@@ -17,11 +17,11 @@ Then enter article or articles names the same it is in the actual link:
 
 1. Starts with capital letter
 
-2. Spaces are undecscores: _
+2. **Spaces are undecscores: _**
 
 If you want multiple articles at once:
 
-1. Add ! to the beginning
+1. **Add ! to the beginning**
 
 2. Seperate articles with commas
 
