@@ -11,7 +11,7 @@ Example 2:
 
 ![Screenshot from 2023-04-07 12-15-12](https://user-images.githubusercontent.com/62663286/230581960-b56b68d9-8057-4c2d-902e-e67925564bdf.png)
 
-First enter the languege for the Wikipedia you want to use with the two letter abbreviation
+First enter the languege for the Wikipedia you want to use with the **two letter abbreviation**
 
 Then enter article or articles names the same it is in the actual link:
 
